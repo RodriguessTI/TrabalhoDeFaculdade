@@ -1,0 +1,62 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char** argv) {
+	
+		int c, n=10, vetOriginal[n], maior, pares=0, digite, soma=0, j, vetInvertido[n];
+	
+		do{
+		printf("----------------------------------------------------MENU----------------------------------------------------------------");
+			printf("Digite 1 - para criar um vetor com 10 numeros aleatórios\n Digite 2- para mostrar o elemento de maior valor do vetOriginal\n Digite 3- para contabilizar quantos elementos sao pares no vetOriginal\n Digite 4- para mostrar o valor do somatorio dos elementos do vetOriginal\n Digite 5- para mostrar os elementos do vetorOriginal na ordem inversa\n Digite 6 - para sair\n");
+			scanf("%d",&digite);
+			srand(time(NULL));
+			
+			//para criar um vetor com 10 números aleatórios	
+			if(digite==1){				
+				for(c=0; c<n; c++){
+					vetOriginal[c] = rand()%100;
+						printf("vetOriginal[%d]=%d\n\n", c, vetOriginal[c]);
+				}
+			}
+			//para mostrar o elemento de maior valor do vetOriginal
+			if(digite==2){
+				maior=vetOriginal[0];
+				for(c=0; c<n; c++){
+					if(vetOriginal[c]>maior){
+						maior=vetOriginal[c];	
+					}
+				}
+				printf("\nMaior valor: %d\n\n",maior);
+			}
+			//para contabilizar quantos elementos são pares no vetOriginal
+			if(digite==3){	
+				for(c=0; c<n; c++){
+					if(vetOriginal[c]%2==0)
+						pares++;
+				}
+					printf("\nExiste %d numeros pares\n\n",pares);
+			}
+			//para mostrar o valor do somatório dos elementos do vetOriginal
+			if(digite==4){
+				for(c=0; c<n; c++){
+					soma=vetOriginal[c]+soma;	
+				}
+				printf("\nO valor do somatorio dos elementos e: %d\n\n",soma);
+			}
+		
+			//para mostrar os elementos do vetorOriginal na ordem inversa(O vetor deve ser invertido de verdade)
+			if(digite==5){
+				for(c = 0; c < n; c++) {
+      			  vetInvertido[c] = vetOriginal[n-c-1];
+       				 printf("\nO vetor invertido e: %d\n\n", vetInvertido[c]);
+   			 }
+				}
+				
+	}while(digite !=6);
+	
+	return 0;
+}
