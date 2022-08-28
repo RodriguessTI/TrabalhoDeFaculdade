@@ -39,6 +39,7 @@ int main(int argc, char** argv) {
 						pares++;
 				}
 					printf("\nExiste %d numeros pares\n\n",pares);
+					pares=0;
 			}
 			//para mostrar o valor do somatório dos elementos do vetOriginal
 			if(digite==4){
@@ -46,6 +47,8 @@ int main(int argc, char** argv) {
 					soma=vetOriginal[c]+soma;	
 				}
 				printf("\nO valor do somatorio dos elementos e: %d\n\n",soma);
+				soma=0;
+			
 			}
 		
 			//para mostrar os elementos do vetorOriginal na ordem inversa(O vetor deve ser invertido de verdade)
@@ -55,8 +58,9 @@ int main(int argc, char** argv) {
        				 printf("\nO vetor invertido e: %d\n\n", vetInvertido[c]);
    			 }
 				}
-				
 	}while(digite !=6);
+			system("cls");
+			printf("\n-----------------------Programa encerrado!------------------------------\n\n");
 	
 	return 0;
 }
