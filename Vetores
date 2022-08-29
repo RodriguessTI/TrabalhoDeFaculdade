@@ -10,8 +10,8 @@ int main(int argc, char** argv) {
 		int c, n=10, vetOriginal[n], maior, pares=0, digite, soma=0, j, vetInvertido[n];
 	
 		do{
-		printf("----------------------------------------------------MENU----------------------------------------------------------------");
-			printf("Digite 1 - para criar um vetor com 10 numeros aleatórios\n Digite 2- para mostrar o elemento de maior valor do vetOriginal\n Digite 3- para contabilizar quantos elementos sao pares no vetOriginal\n Digite 4- para mostrar o valor do somatorio dos elementos do vetOriginal\n Digite 5- para mostrar os elementos do vetorOriginal na ordem inversa\n Digite 6 - para sair\n");
+		printf("\n----------------------------------------------------MENU----------------------------------------------------------------\n");
+			printf("\n\nDigite 1 - para criar um vetor com 10 numeros aleatórios\n Digite 2- para mostrar o elemento de maior valor do vetOriginal\n Digite 3- para contabilizar quantos elementos sao pares no vetOriginal\n Digite 4- para mostrar o valor do somatorio dos elementos do vetOriginal\n Digite 5- para mostrar os elementos do vetorOriginal na ordem inversa\n Digite 6 - para sair\n\n");
 			scanf("%d",&digite);
 			srand(time(NULL));
 			
@@ -19,11 +19,11 @@ int main(int argc, char** argv) {
 			if(digite==1){				
 				for(c=0; c<n; c++){
 					vetOriginal[c] = rand()%100;
-						printf("vetOriginal[%d]=%d\n\n", c, vetOriginal[c]);
+						printf("\nvetOriginal[%d]=%d\n\n", c, vetOriginal[c]);
 				}
 			}
 			//para mostrar o elemento de maior valor do vetOriginal
-			if(digite==2){
+			 else if(digite==2){
 				maior=vetOriginal[0];
 				for(c=0; c<n; c++){
 					if(vetOriginal[c]>maior){
@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
 				printf("\nMaior valor: %d\n\n",maior);
 			}
 			//para contabilizar quantos elementos são pares no vetOriginal
-			if(digite==3){	
+			else if(digite==3){	
 				for(c=0; c<n; c++){
 					if(vetOriginal[c]%2==0)
 						pares++;
@@ -42,7 +42,7 @@ int main(int argc, char** argv) {
 					pares=0;
 			}
 			//para mostrar o valor do somatório dos elementos do vetOriginal
-			if(digite==4){
+			else if(digite==4){
 				for(c=0; c<n; c++){
 					soma=vetOriginal[c]+soma;	
 				}
@@ -52,12 +52,16 @@ int main(int argc, char** argv) {
 			}
 		
 			//para mostrar os elementos do vetorOriginal na ordem inversa(O vetor deve ser invertido de verdade)
-			if(digite==5){
+			else if(digite==5){
 				for(c = 0; c < n; c++) {
       			  vetInvertido[c] = vetOriginal[n-c-1];
        				 printf("\nO vetor invertido e: %d\n\n", vetInvertido[c]);
    			 }
 				}
+				
+			else{
+				printf("\n\n******POR FAVOR ESCOLHA UMA OPCAO VALIDA NO MENU ABAIXO!******\n\n");
+			}
 	}while(digite !=6);
 			system("cls");
 			printf("\n-----------------------Programa encerrado!------------------------------\n\n");
